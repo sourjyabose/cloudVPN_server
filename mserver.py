@@ -6,7 +6,7 @@ import queue
 import random
 
 sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-sock.bind(("0.0.0.0",8081));
+sock.bind(("0.0.0.0",8081))
 sock.listen(5);
 towardsclient,addr=sock.accept()
 datapackets=queue.Queue();

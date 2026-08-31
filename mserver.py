@@ -5,7 +5,10 @@ import threading
 import queue
 import random
 import multiprocessing
+def noprint(*args):
+    pass
 
+print=noprint
 def new_server(towardsclient,addr):
         
         datapackets=queue.Queue();

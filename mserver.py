@@ -5,6 +5,23 @@ import threading
 import queue
 import random
 import multiprocessing
+from dotenv import load_dotenv
+import os
+import requests
+
+
+load_dotenv()
+
+ccserver=os.getenv("ccserver")
+selfip=os.getenv("selfip")
+portfromenv=os.getenv("port")
+servername=os.getenv("servername")
+serverkey=os.getenv("serverkey")
+
+if requests.get(f"{ccserver}/selfRegister/{servername}/{serverkey}/{selfip}/{portfromenv}").json()["status"]!="success":
+    exit()
+
+
 def noprint(*args):
     pass
 
@@ -73,7 +90,7 @@ def new_server(towardsclient,addr):
 
 if __name__=="__main__":
     sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM);
-    sock.bind(("0.0.0.0",8081))
+    sock.bind(("0.0.0.0",int(portfromenv)))
     sock.listen(5);
 
     while True:

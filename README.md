@@ -17,7 +17,7 @@ servername=<Jo man mai aaye wo (As entered during registration via Admin Dashboa
 serverkey=<jaisi tumhari marzi (As entered during registration via Admin Dashboard)>
 ```
 > [!WARNING]
-> Don't use port number 8338 for Routing Server.
+> Don't use port 8338 for Routing Server.
 
 ### Run the server
 

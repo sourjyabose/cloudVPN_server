@@ -16,6 +16,8 @@ port=<port no you wish to use>
 servername=<Jo man mai aaye wo (As entered during registration via Admin Dashboard)>
 serverkey=<jaisi tumhari marzi (As entered during registration via Admin Dashboard)>
 ```
+> [!WARNING]
+> Don't use port number 8338 for Routing Server.
 
 ### Run the server
 
@@ -27,9 +29,11 @@ python3 mserver.py
 
 #### *1 Server IP
 
-Server IP address is required for configuration, server ip can be found using:
+Server IP address is required for configuration(selfip), server ip can be found using:
 
 For Windows:
 ```ps
 ipconfig
 ```
+> [!note]
+> If the Routing Server is running on same computer as that of Command and Control Server then ccserver should be: `http://127.0.0.1:8338/` however selfip should be actual network IP (or the public IP if hosted on cloud) of the computer and not any localhost.
